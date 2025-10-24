@@ -1,0 +1,27 @@
+# Core FastAPI dependencies
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+pydantic==2.9.2
+pydantic[email]
+email-validator
+python-multipart==0.0.6
+
+# HTTP client for external API calls
+httpx==0.25.2
+requests==2.32.3
+
+# Environment variables
+python-dotenv==1.0.1
+
+# MongoDB async driver
+motor==3.3.2
+pymongo==4.6.1
+
+# Machine Learning dependencies
+pandas==2.2.3
+scikit-learn==1.5.2
+catboost==1.2.7
+numpy==1.26.4
+
+# Federated Learning (if needed)
+flwr==1.12.0
