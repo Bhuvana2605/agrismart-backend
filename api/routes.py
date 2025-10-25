@@ -689,7 +689,71 @@ async def get_profile(user_id: str):
 # ========== COMMUNITY & FEEDBACK ==========
 
 # In-memory storage (use MongoDB/PostgreSQL for production)
-community_posts = []
+# Initialize with dummy community posts
+community_posts = [
+    {
+        'id': 'dummy_1',
+        'author': 'Rajesh Kumar',
+        'title': 'Successful Rice Harvest Using AgriSmart',
+        'content': 'I used AgriSmart recommendations for my 5-acre farm and got excellent results! The soil analysis was spot-on, and the weather-based suggestions helped me time my planting perfectly. My rice yield increased by 20% this season. Highly recommend this platform to all farmers!',
+        'type': 'post',
+        'timestamp': '2024-10-20T10:30:00',
+        'likes': 45,
+        'comments': 12
+    },
+    {
+        'id': 'dummy_2',
+        'author': 'Priya Sharma',
+        'title': 'Great Tool for Crop Planning',
+        'content': 'As a new farmer, I was confused about which crops to grow. AgriSmart made it so easy! The recommendations based on my location and soil type were very accurate. I am now growing tomatoes and they are thriving. Thank you AgriSmart team!',
+        'type': 'post',
+        'timestamp': '2024-10-18T14:15:00',
+        'likes': 32,
+        'comments': 8
+    },
+    {
+        'id': 'dummy_3',
+        'author': 'Suresh Reddy',
+        'title': 'Feedback: Feature Request',
+        'content': 'The app is amazing! Would love to see a feature for pest detection and organic farming tips. Overall, very satisfied with the crop recommendations.',
+        'type': 'feedback',
+        'rating': 5,
+        'timestamp': '2024-10-15T09:45:00',
+        'likes': 18,
+        'comments': 5
+    },
+    {
+        'id': 'dummy_4',
+        'author': 'Lakshmi Devi',
+        'title': 'Helped Me Switch to Organic Farming',
+        'content': 'I was looking to switch to organic farming and AgriSmart helped me choose the right crops for my soil type. The market price information is also very helpful for planning. My family and I are very grateful for this service.',
+        'type': 'post',
+        'timestamp': '2024-10-12T16:20:00',
+        'likes': 28,
+        'comments': 7
+    },
+    {
+        'id': 'dummy_5',
+        'author': 'Venkat Rao',
+        'title': 'Excellent Weather Integration',
+        'content': 'The real-time weather data integration is fantastic! It helped me avoid planting during unexpected rainfall. The app saved my entire crop season. Every farmer should use this!',
+        'type': 'post',
+        'timestamp': '2024-10-10T11:00:00',
+        'likes': 52,
+        'comments': 15
+    },
+    {
+        'id': 'dummy_6',
+        'author': 'Anita Patel',
+        'title': 'Feedback: Bug Report',
+        'content': 'Love the app but sometimes the location detection takes a bit long. Otherwise, the recommendations are very accurate and helpful. Keep up the good work!',
+        'type': 'feedback',
+        'rating': 4,
+        'timestamp': '2024-10-08T13:30:00',
+        'likes': 10,
+        'comments': 3
+    }
+]
 
 class FeedbackRequest(BaseModel):
     name: str
