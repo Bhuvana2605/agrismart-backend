@@ -52,10 +52,34 @@ app.add_middleware(
 
 # Health check endpoint
 @app.get("/")
+async def root():
+    return {
+        "status": "healthy",
+        "message": "AgriSmart Backend API is running",
+        "version": "1.0.0",
+        "endpoints": [
+            "/api/recommend-from-location",
+            "/api/recommend-manual",
+            "/api/detect-soil",
+            "/api/weather",
+            "/api/recommend",
+            "/api/translate",
+            "/api/feedback",
+            "/api/community-posts",
+            "/api/community-post",
+            "/api/profile/save",
+            "/api/profile/{user_id}"
+        ],
+        "documentation": "/docs",
+        "health": "/health"
+    }
+
+
+@app.get("/health")
 async def health_check():
     return {
         "status": "healthy",
-        "message": "Crop Recommendation System API is running"
+        "service": "agrismart-backend"
     }
 
 # Mount routes from api/routes.py
